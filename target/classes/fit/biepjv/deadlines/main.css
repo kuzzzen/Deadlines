@@ -1,0 +1,45 @@
+.root {
+    -fx-font-size: 16;
+    -fx-font-family: Gogh;
+}
+
+.radio-button {
+    -fx-text-alignment: center;
+}
+
+.radio-button > .radio {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0px;
+    -fx-padding: 0.0em;
+}
+.radio-button > .radio > .dot {
+    -fx-background-color: transparent;
+}
+
+.radio-button:selected {
+    -fx-background-color: #e0e0e0;
+}
+
+.radio-button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+
+.button {
+    -fx-border-color: transparent !important;
+    -fx-background-color: transparent;
+}
+
+.button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+.list-view {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 0);
+}
+
+.date-picker {
+    -fx-max-width: 110px;
+    -fx-border-radius: 0px;
+}

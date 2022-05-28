@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fit.biepjv.deadlines.DeadlinesAppController">
+   <center>
+      <ListView id="listView" fx:id="listView" prefHeight="400.0" prefWidth="615.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <VBox maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="242.0">
+               <children>
+                  <RadioButton id="todayRB" fx:id="todayRB" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getRange" prefHeight="39.0" prefWidth="200.0" text="Today" textAlignment="CENTER">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="radioButtons" />
+                     </toggleGroup>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton id="tomorrowRB" fx:id="tomorrowRB" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getRange" text="Tomorrow" textAlignment="CENTER" toggleGroup="$radioButtons">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding></RadioButton>
+                  <RadioButton id="thisWeekRB" fx:id="thisWeekRB" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getRange" text="This week" textAlignment="CENTER" toggleGroup="$radioButtons">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding></RadioButton>
+                  <RadioButton id="customRB" fx:id="customRB" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#getRange" text="Custom" textAlignment="CENTER" toggleGroup="$radioButtons">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding></RadioButton>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <DatePicker id="dateFrom" fx:id="dateFrom" onAction="#refreshEvents" promptText="From" visible="false">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                        <DatePicker id="dateTo" fx:id="dateTo" onAction="#refreshEvents" promptText="To" visible="false">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                     </children>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button id="addButton" fx:id="addButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addEvent" text="Add" />
+                  <Button id="deleteButton" fx:id="deleteButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#deleteEvent" text="Delete" />
+                  <Button id="editButton" fx:id="editButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#editEvent" text="Edit" />
+                  <Button id="showButton" fx:id="showButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showDescription" text="Show description" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
